@@ -17,6 +17,12 @@ const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
 
 app.use(cors({ credentials: true, origin: 'https://animeverse.onrender.com' }));
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://animeverse.onrender.com');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
