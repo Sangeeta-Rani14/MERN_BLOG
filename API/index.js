@@ -16,7 +16,12 @@ const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
 
-app.use(cors({credentials:true,origin:'https://animeverse.onrender.com'}));
+app.use(cors({ credentials: true, origin: 'https://animeverse.onrender.com' }));
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
