@@ -6,7 +6,7 @@ import { UserContext } from './UserContext';
 function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('https://animeverse.onrender.com', {
       credentials:'include'
     }).then(res => {
       res.json().then(userInfo => {

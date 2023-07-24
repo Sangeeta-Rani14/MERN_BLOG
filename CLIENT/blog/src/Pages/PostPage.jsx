@@ -13,7 +13,7 @@ function PostPage() {
     
   useEffect(() => {
 
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://animeverse.onrender.com/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           setPotInfo(postInfo)
@@ -41,7 +41,7 @@ function PostPage() {
         </div>
       )}
       <div className='image'>
-        <img src={`http://localhost:4000/${postInfo.cover}`}   alt=""/>
+        <img src={`https://animeverse.onrender.com/${postInfo.cover}`}   alt=""/>
       </div>
       <div dangerouslySetInnerHTML={{__html:postInfo.content}}/>
     </div>
