@@ -150,7 +150,6 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 })
 
-// {requestData:{username,email,password}}
 
 
 
